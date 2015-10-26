@@ -1,0 +1,50 @@
+Reporting Computer Related Problems
+
+Technology Advisory Committee, Department of Mathematical Sciences
+J. Maletic, M. Wierdl, A. Negatu, J. Hu, T. Barton, C. Tanner
+
+Changing how you report problems
+The amount of computer hardware & software, networks, and supporting infrastructure in Dunn Hall has slowly  
+increased in size and complexity over the recent years.  It has become a difficult task for one individual to manage 
+the service requests (of over 35 faculty) and the day to day maintenance without a rigorous process.  The University 
+now supports a central problem reporting system through      Helpdesk.  All problems related to computer hardware & 
+software, networks, and printers must now be reported to this system.
+
+This change is intended to improve response time of dealing with computer problems and service requests.  The 
+following are some of the advantages of using this new system:
+1. A built-in tracking and problem identification system,
+2. Allowing users to check the status of requests and problem reports,
+3. Maintaining a central location for the Local Service Provider and assistants to check for problem reports.
+
+Old way to report problems
+
+The current method used by the faculty, staff, and students for reporting problems in Dunn Hall is to describe your 
+problem to our Local Service Provider (LSP) Aregahegn Negatu via email, voice mail, phone, or direct 
+conversation.  This method has its obvious problems and pitfalls (no record keeping, no tracking, etc.).  A number of 
+assistants also support Mr. Negatu for systems administration, and they do not have access to his personal email, 
+voice mail, or mind.  Thus, there is no central place for Mr. Negatu or his assistants to check for problem reports.
+
+New way to report problems
+
+All problems can be reported in one of two ways:
+   The preferred (and more reliable) method is using the web page:
+ http://helpdesk.memphis.edu/ and clicking on: Faculty, Staff, Student Service Requests.
+ If you cannot access the Internet then call 8888 and describe your problem to the attendant.
+
+In both cases, your problem report will be given a Service Request Number.  Using the web to report the problem, 
+you will be automatically emailed the number.  If you called 8888, make sure the attendant gives this number over 
+the phone.  The number is used to track the progress and status of your request/problem.  Go to the same web page: 
+http://helpdesk.memphis.edu/ and click on: "check the status of an existing call" and enter the number.
+
+Is your problem taking a long time to get fixed?
+
+If the request is taking a long time to be fixed and the status has already been checked via the web page or 8888, 
+then email the LSP (Mr. Negatu) your Service Request Number and a brief explanation.  He will try to address 
+your problem as soon as possible.  A priority can be assigned to your service request at reporting time, but the LSP 
+must do some daily priority assignments.  
+
+Time Frame
+
+The Technology Advisory Committee has unanimously agreed that this new method will be a more efficient and 
+better way of reporting problems.  After November 15th our Local Service Provider (i.e., A. Negatu) will 
+**STOP** accepting requests for service via: direct phone call (4943), direct email, personal conversation
