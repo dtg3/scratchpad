@@ -2,13 +2,13 @@
 #include "string.hpp"
 
 String::String(){
-  Capacity = DEFAULT_STRING_CAPACITY - 1;
+  Capacity = DEFAULT_STRING_CAPACITY;
   s = new char[Capacity];
   s[0] = '\0';
 }
 
 String::String(char ch){
-  Capacity = DEFAULT_STRING_CAPACITY - 2;
+  Capacity = DEFAULT_STRING_CAPACITY;
   s = new char[Capacity];
   s[0] = ch;
 
@@ -19,8 +19,9 @@ String::String(char ch){
 String::String(const char* c_str){
   int size = 0;
   while (c_str[size++] != '\0');
-  
-  Capacity = DEFAULT_STRING_CAPACITY - size;
+
+  if (size >= Capacity)
+  Capacity = DEFAULT_STRING_CAPACITY;
   s = new char[Capacity];
   for (int i = 0; i < size; ++i){
     s[i] = c_str[i];
@@ -30,8 +31,8 @@ String::String(const char* c_str){
 String::String(int cap, const char* c_str){
   int size = 0;
   while (c_str[size++] != '\0');
-  
-  Capacity = cap - size;
+
+  Capacity = cap;
   s = new char[Capacity];
   for (int i = 0; i < size; ++i){
     s[i] = c_str[i];
@@ -39,7 +40,7 @@ String::String(int cap, const char* c_str){
 }
 
 String::String(int cap){
-  Capacity = cap - 1;
+  Capacity = cap;
   s = new char[Capacity];
   s[0] = '\0';
 }
@@ -58,7 +59,15 @@ String::~String() {
 }
 
 String& String::operator= (String right_hand) {
-  
+  delete[] s;
+  Capacity = right_hand.Capacity;
+  s = new char[Capacity];
+
+  for (int i = 0; i < right_hand.length() + 1; ++i){
+    s[i] = right_hand.s[i];
+  }
+
+  return *this;
 }
 
 int String::length() const{

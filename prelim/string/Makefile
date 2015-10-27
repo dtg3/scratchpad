@@ -2,7 +2,7 @@
 # String & Oracle
 #
 # CS II Kent State University
-# Make file for string class and testing oracle 
+# Make file for string class and testing oracle
 # J. Maletic 2015
 #
 #
@@ -14,9 +14,9 @@ OPTIONS = -g -Wall -W -Wunused -Wuninitialized -Wshadow -std=c++11
 
 # Names of your test files - add them in as you build them.
 # Names must start with "test_"
-MYTESTS = test_default_ctor test_char_ctor test_c_string_ctor test_string_length
+MYTESTS = test_default_ctor test_char_ctor test_c_string_ctor test_string_length test_op_assignments
 
-# Names of test oracle files 
+# Names of test oracle files
 CTOR = testoracle_ctor_default testoracle_ctor_int testoracle_ctor_char testoracle_ctor_charArray_int testoracle_ctor_charArray
 REL  = testoracle_equal testoracle_lessThan
 COPY = testoracle_ctor_copy testoracle_assign
@@ -36,7 +36,7 @@ msg:
 	@echo '  clean'
 
 ###############################################################
-# Compile string 
+# Compile string
 #
 string.o: string.hpp string.cpp
 	$(CPP) -c $(OPTIONS) string.cpp -o string.o
@@ -45,7 +45,7 @@ string: string.o
 
 ###############################################################
 # Run all of your tests
-# 
+#
 # You will need to ADD your other below:
 # For example: ./test_plus
 #
@@ -54,6 +54,7 @@ tests: $(MYTESTS)
 	./test_char_ctor
 	./test_c_string_ctor
 	./test_string_length
+	./test_op_assignments
 
     #ADD YOUR TESTS HERE ***************
 
@@ -73,12 +74,12 @@ test_%.o: string.hpp test_%.cpp
 oracle: $(CTOR) $(REL) $(COPY) $(OPS)
 	./testoracle_ctor_default
 	./testoracle_ctor_int
-	./testoracle_ctor_char 
+	./testoracle_ctor_char
 	./testoracle_ctor_charArray
-	./testoracle_ctor_charArray_int 
-	./testoracle_equal 
+	./testoracle_ctor_charArray_int
+	./testoracle_equal
 	./testoracle_lessThan
-	./testoracle_ctor_copy 
+	./testoracle_ctor_copy
 	./testoracle_assign
 	./testoracle_concat
 
@@ -90,18 +91,18 @@ testoracle_%: string.o testoracles/testoracle_%.o
 
 
 ###############################################################
-# Compile Project 
+# Compile Project
 #
 
 justify.o: justify.cpp string.hpp
 	$(CPP) -c $(OPTIONS) justify.cpp -o justify.o
 
-justify: justify.o string.o 
+justify: justify.o string.o
 	$(CPP) $(OPTIONS) justify.o string.o  -o justify
 
 
 ###############################################################
-# clean 
+# clean
 # Removes all .o files and all executables
 #
 clean:
