@@ -1,6 +1,7 @@
 // unfinished
 
 #include <string>
+#include <iostream>
 
 template <typename T>
 class Node {
@@ -25,10 +26,8 @@ public:
 	}
 
 	void push(T val) {
-		if (bottom == nullptr
-			bottom = n;
-
-		Node<T> * n = new Node(val, bottom);
+		Node<T> * n = new Node<T>(val, bottom);
+		bottom = n;
 	}
 
 	void pop() {
@@ -52,7 +51,8 @@ int main() {
 
 	Node<int> * temp = s.bottom;
 	while (temp != nullptr) {
-
+		std::cout << temp->val << std::endl;
+		temp = temp->next;
 	}
 
 	return 0;
