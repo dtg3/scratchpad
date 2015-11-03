@@ -31,11 +31,9 @@ public:
 	}
 
 	void pop() {
-		Node<T> current = bottom;
-		while (current.next != nullptr) {
-			current = current.next;
-		}
-		delete current;
+		Node<T> * temp = bottom->next;
+		delete bottom;
+		bottom = temp;
 	}
 };
 
@@ -53,6 +51,14 @@ int main() {
 	while (temp != nullptr) {
 		std::cout << temp->val << std::endl;
 		temp = temp->next;
+	}
+
+	s.pop();
+	s.pop();
+	Node<int> * temp1 = s.bottom;
+	while (temp1 != nullptr) {
+		std::cout << temp1->val << std::endl;
+		temp1 = temp1->next;
 	}
 
 	return 0;
