@@ -20,10 +20,6 @@ int g_s(int m, int n) {
 	args.push(n);
 
 	while (args.size() >= 2) {
-		//for (std::stack<int> dump = args; !dump.empty(); dump.pop())
-        //	std::cout << dump.top() << ", ";
-        //std::cout << std::endl;
-
 		n = args.top();
 		args.pop();
 		m = args.top();
