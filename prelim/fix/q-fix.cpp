@@ -41,17 +41,15 @@ std::string convert(const std::string& input, const std::string& mode) {
 
 int main(int argc, char* argv[]) {
 
-  if (argc != 2) {
+  if (argc != 3) {
     std::cerr << "requires a mode (post / pre)\n";
     return 1;
   }
 
-  //std::string infix = "(1+((2+3)*(4*5)))";
-  std::string infix = "((A*B)+(C/D))";
-  std::string mode(argv[1]);
+  std::string mode(argv[2]);
 
-  std::cout << "infix: " << infix << "\n";
-  std::cout << mode + "fix: " << convert(infix, mode) << "\n";
+  std::cout << "infix: " << argv[1] << "\n";
+  std::cout << mode + "fix: " << convert(argv[1], mode) << "\n";
 
   return 0;
 }
