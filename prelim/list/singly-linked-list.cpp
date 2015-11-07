@@ -1,4 +1,4 @@
-// 2014s Problem 1
+// 2014s Problem 1 & 2
 
 #include <iostream>
 
@@ -37,7 +37,7 @@ public:
 	}
 
 	// copy-constructor
-	List(List<T> & copy) {
+	List(const List<T> & copy) {
 		beginning = nullptr;
 		ending = nullptr;
 
@@ -119,6 +119,35 @@ public:
 	}
 };
 
+
+// Generic free function (Problem 2)
+template <typename T>
+struct compare {
+	bool operator () (T left, T right) {
+		return left == right;
+	}
+};
+
+template <typename T>
+List<T> removeDuplicates(List<T>  l, compare<T> comp) {
+	List<T> removed;
+	for (int i = 0; i < l.length(); ++i) {
+		T val = l[i];
+
+		bool found = false;
+		for (int j = 0; j < removed.length(); ++j) {
+
+			if (comp(removed[j], val))
+				found = true;
+		}
+
+		if (!found)
+			removed.AddToBack(val);
+	}
+
+	return removed;
+}
+
 int main() {
 
 	List<int> l;
@@ -158,7 +187,6 @@ int main() {
 	
 
 	std::cerr << "l: ";
-	std::cerr << "size is: " << l.length() << std::endl;
 	for (int i = 0; i < l.length(); ++i)
 		std::cerr << l[i] << " ";
 	std::cerr << std::endl;
@@ -171,6 +199,25 @@ int main() {
 	std::cerr << "assigned: ";
 	for (int i = 0; i < assigned.length(); ++i)
 		std::cerr << assigned[i] << " ";
+	std::cerr << std::endl;
+
+
+	// =======================================
+	// Problem 2
+	List<int> dups;
+	dups.AddToBack(1);
+	dups.AddToBack(2);
+	dups.AddToBack(3);
+	dups.AddToBack(4);
+	dups.AddToBack(2);
+	dups.AddToBack(3);
+	dups.AddToBack(3);
+	compare<int> f;
+	List<int> removed = removeDuplicates(dups, f);
+
+	std::cerr << "removed: ";
+	for (int i = 0; i < removed.length(); ++i)
+		std::cerr << removed[i] << " ";
 	std::cerr << std::endl;
 
 	return 0;
