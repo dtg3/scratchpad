@@ -33,6 +33,33 @@ public:
 		root = copy(c.root);
 	}
 
+	// recursive insert
+	void assign(Node* r, int item) {
+		if (root == nullptr) {
+			root = new Node(item, nullptr, nullptr);
+			return;
+		}
+
+		if (item < r->val) {
+			if (r->left == nullptr)
+				r->left = new Node(item, nullptr, nullptr);
+			else
+				assign(r->left, item);
+		}
+		else {
+			if (r->right == nullptr)
+				r->right = new Node(item, nullptr, nullptr);
+			else
+				assign(r->right, item);
+		}
+	}
+
+	void insert(int item) {
+		assign(root, item);
+	}
+
+	/*
+	// iterative insert
 	void insert(int item) {
 		Node * n = new Node(item, nullptr, nullptr);
 
@@ -63,6 +90,7 @@ public:
 			}
 		}
 	}
+	*/
 
 	// for testing
 	void print(int indent) {
