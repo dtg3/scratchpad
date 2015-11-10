@@ -19,5 +19,10 @@ int main() {
   if (!(SHA1_Final(md, &context)))
     return 1;
 
+  for(i = 0; i < SHA256_DIGEST_LENGTH; i++)
+  {
+    sprintf(outputBuffer + (i * 2), "%02x", hash[i]);
+  }
+  outputBuffer[64] = 0;
   std::cout << md << "\n";
 }
